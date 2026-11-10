@@ -22,15 +22,15 @@ export default function Videos() {
   return (
     <section id="videos" className="section dark-section">
       <div className="container">
-        <SectionHead light eyebrow="On YouTube" accent="Latest" rest="Videos" aside="Tutorials, design breakdowns and behind-the-scenes from my channel." />
+        <SectionHead light eyebrow="On YouTube" accent="Latest" rest="Videos" aside="Short-form videos, lifestyle content and creative experiments: filmed, edited and posted by me." />
 
         {state.loading ? (
           <div className="video-layout"><div className="video-main skeleton dark" /><div className="video-list">{[0, 1, 2].map((i) => <div key={i} className="video-row skeleton dark" />)}</div></div>
         ) : !state.videos.length ? (
           <div className="video-empty reveal">
             <SocialIcon name="youtube" size={42} />
-            <p>{state.configured === false ? <>Set <code>YOUTUBE_CHANNEL_ID</code> to show your latest uploads here.</> : 'No videos yet — check back soon!'}</p>
-            <a className="btn btn-orange" href={site.youtubeChannelUrl} target="_blank" rel="noreferrer">Visit Channel</a>
+            <p>New videos are on the way. Check back soon!</p>
+            {site.youtubeChannelUrl && <a className="btn btn-orange" href={site.youtubeChannelUrl} target="_blank" rel="noreferrer">Visit Channel</a>}
           </div>
         ) : (
           <>
@@ -60,9 +60,9 @@ export default function Videos() {
                 ))}
               </div>
             </div>
-            <div className="center-btn">
+            {site.youtubeChannelUrl && <div className="center-btn">
               <a href={site.youtubeChannelUrl} target="_blank" rel="noreferrer" className="btn btn-orange pill-btn">Subscribe on YouTube <span className="btn-ico white"><Arrow size={14} rotate={0} /></span></a>
-            </div>
+            </div>}
           </>
         )}
       </div>

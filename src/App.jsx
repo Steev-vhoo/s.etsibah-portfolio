@@ -7,6 +7,7 @@ import Services from './components/Services.jsx'
 import About from './components/About.jsx'
 import Experience from './components/Experience.jsx'
 import Projects from './components/Projects.jsx'
+import Photography from './components/Photography.jsx'
 import Videos from './components/Videos.jsx'
 import Testimonials from './components/Testimonials.jsx'
 import Contact from './components/Contact.jsx'
@@ -14,7 +15,7 @@ import Footer from './components/Footer.jsx'
 
 export default function App() {
   useEffect(() => {
-    document.title = `${site.name} — ${site.role}`
+    document.title = `${site.fullName} | Digital Marketing Portfolio`
     // Reveal-on-scroll
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => {
@@ -40,6 +41,7 @@ export default function App() {
         <About />
         <Experience />
         <Projects />
+        <Photography />
         <Videos />
         <Testimonials />
         <Contact />

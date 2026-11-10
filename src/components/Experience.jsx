@@ -5,14 +5,14 @@ export default function Experience() {
   return (
     <section id="experience" className="section dark-section">
       <div className="container narrow">
-        <SectionHead light eyebrow="My Journey" accent="Work" rest="Experience" aside="A few of the places and teams I've had the pleasure of designing with." />
+        <SectionHead light eyebrow="Toolkit & Growth" accent="Always" rest="Learning" aside="Always learning. Always creating. Here's where I've been building experience and skills." />
         <div className="timeline">
-          {site.experience.map((e) => (
-            <div key={e.role + e.period} className="tl-item reveal">
-              <span className="tl-period">{e.period}</span>
+          {site.journey.map((e) => (
+            <div key={e.title} className="tl-item reveal">
+              <span className="tl-period">{e.tag}</span>
               <div>
-                <h3>{e.role}</h3>
-                <p className="tl-company">{e.company}</p>
+                <h3>{e.title}</h3>
+                <p className="tl-company">{e.org}</p>
                 <p>{e.text}</p>
               </div>
             </div>

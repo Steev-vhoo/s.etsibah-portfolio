@@ -3,6 +3,7 @@ import { Arrow, SocialIcon, Spark, Sparkle } from './Icons.jsx'
 
 export default function Hero() {
   const [t1, t2, t3, t4, t5] = site.heroTags
+  const socials = site.socials.filter((s) => s.url)
   return (
     <section id="home" className="hero grid-bg">
       <div className="container hero-inner">
@@ -24,18 +25,19 @@ export default function Hero() {
           <div className="hero-left reveal">
             <span className="quote-mark">“</span>
             <p className="hero-quote">{site.heroQuote}</p>
-            <div className="reviews">
-              <div className="avatars">
-                {['#f6c9b8', '#d9d9d9', '#f3a78f', '#bdbdbd'].map((c, i) => <span key={i} style={{ background: c }} />)}
+            <div className="hero-learning">
+              <span className="pulse" />
+              <div>
+                <small>Currently</small>
+                <p><strong className="accent">{site.heroBadge.title}</strong></p>
+                <small>{site.heroBadge.subtitle}</small>
               </div>
-              <p><strong className="accent">{site.reviews.count} Reviews</strong> <strong>({site.reviews.rating} of 5)</strong></p>
-              <small>Reviews from valued clients</small>
             </div>
           </div>
 
           <div className="hero-photo">
             <div className="blob" />
-            <img src={site.photo} alt={site.name} />
+            <img src={site.photo} alt={site.fullName} fetchPriority="high" />
             <div className="hero-btns">
               <a href="#projects" className="btn btn-dark btn-lg">Portfolio <span className="btn-ico"><Arrow size={14} rotate={0} /></span></a>
               <a href="#contact" className="btn btn-outline btn-lg">Hire Me</a>
@@ -48,14 +50,16 @@ export default function Hero() {
               <span className="tag-row"><span className="spark-dot"><Sparkle size={12} /></span><span className="tag dark">{t3}</span></span>
               <span className="tag orange">{t4}</span><span className="tag dark">{t5}</span>
             </div>
-            <div className="follow">
-              <small>Follow Us On</small>
-              <div className="socials">
-                {site.socials.slice(0, 4).map((s) => (
-                  <a key={s.name} href={s.url} target="_blank" rel="noreferrer" aria-label={s.name}><SocialIcon name={s.icon} size={14} /></a>
-                ))}
+            {socials.length > 0 && (
+              <div className="follow">
+                <small>Follow Me On</small>
+                <div className="socials">
+                  {socials.map((s) => (
+                    <a key={s.name} href={s.url} target="_blank" rel="noreferrer" aria-label={s.name}><SocialIcon name={s.icon} size={14} /></a>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

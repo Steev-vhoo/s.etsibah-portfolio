@@ -2,11 +2,12 @@
 
 A one-page portfolio (Vite + React) with a projects gallery that loads from **Google Drive** and a **YouTube** section that shows recent uploads. Built to deploy on **Vercel**.
 
-Sections: Home, Services, About, Experience, Projects (Google Drive), Videos (YouTube), Testimonials, Contact.
+Sections: Home, Services, About, Learning & Experience, Selected Work (case studies + Google Drive), Photography, Videos (YouTube), Testimonials (hidden until added), Contact.
 
 ## Edit the content
 - All text, links, stats, services, experience and testimonials: `src/data/site.js`
-- Your photo: add a transparent PNG to `public/` (for example `public/profile.png`) and set `photo: '/profile.png'` in `site.js`
+- Images: `public/images/` (hero cut-out `stephen.webp`, about `stephen-bw.webp`, case-study covers in `projects/`, photography in `photos/`)
+- Still to fill in `site.js`: `email`, social `url`s, `youtubeChannelUrl`, and (optionally) `resumeUrl` and `testimonials`. Empty values are hidden on the page. With no email set, the contact form sends through WhatsApp.
 - Colours and fonts: the `:root` variables at the top of `src/styles.css`
 
 ## Run locally

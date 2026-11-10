@@ -14,28 +14,43 @@ const typeLabel = (m = '') => {
   return 'File'
 }
 
-export default function Projects() {
-  const [state, setState] = useState({ loading: true, files: [], source: 'drive' })
+function CaseStudy({ p, index }) {
+  return (
+    <article className={`case reveal ${index % 2 ? 'flip' : ''}`}>
+      <div className="case-img"><img src={p.image} alt={p.title} loading="lazy" /></div>
+      <div className="case-body">
+        <span className="case-cat">{String(index + 1).padStart(2, '0')} / {p.category}</span>
+        <h3>{p.title}</h3>
+        <p>{p.overview}</p>
+        <dl>
+          <div><dt>My role</dt><dd>{p.role}</dd></div>
+          <div><dt>Outcome</dt><dd>{p.outcome}</dd></div>
+        </dl>
+        <div className="chips">{p.tools.map((t) => <span key={t} className="chip light">{t}</span>)}</div>
+      </div>
+    </article>
+  )
+}
+
+function DriveGallery() {
+  const [state, setState] = useState({ loading: true, files: [] })
   const [filter, setFilter] = useState('All')
 
   useEffect(() => {
     fetch('/api/projects')
       .then((r) => r.json())
-      .then((d) => {
-        if (d.configured && d.files?.length) setState({ loading: false, files: d.files, source: 'drive' })
-        else setState({ loading: false, files: site.fallbackProjects, source: 'fallback', error: d.error })
-      })
-      .catch(() => setState({ loading: false, files: site.fallbackProjects, source: 'fallback' }))
+      .then((d) => setState({ loading: false, files: d.files || [], configured: d.configured }))
+      .catch(() => setState({ loading: false, files: [] }))
   }, [])
 
-  const types = ['All', ...new Set(state.files.map((f) => typeLabel(f.mimeType)).filter(() => state.source === 'drive'))]
+  if (!state.loading && !state.files.length) return null
+  const types = ['All', ...new Set(state.files.map((f) => typeLabel(f.mimeType)))]
   const shown = filter === 'All' ? state.files : state.files.filter((f) => typeLabel(f.mimeType) === filter)
 
   return (
-    <section id="projects" className="section">
-      <div className="container">
-        <SectionHead eyebrow="My Portfolio" accent="Recent" rest="Projects" aside="Live from my Google Drive — click any project to open the full case study, files or prototype." />
-
+    <div className="drive">
+      <div className="drive-head">
+        <h3>More work <span className="muted">from my Google Drive</span></h3>
         {types.length > 2 && (
           <div className="filters">
             {types.map((t) => (
@@ -43,38 +58,43 @@ export default function Projects() {
             ))}
           </div>
         )}
-
-        {state.loading ? (
-          <div className="project-grid">{[0, 1, 2].map((i) => <div key={i} className="project-card skeleton" />)}</div>
-        ) : (
-          <div className="project-grid">
-            {shown.map((p, i) => (
-              <a key={p.id || i} href={p.link} target="_blank" rel="noreferrer" className="project-card reveal">
-                <div className="project-thumb">
-                  {p.thumbnail && !p.isFolder ? (
-                    <img src={p.thumbnail} alt={p.name} loading="lazy" referrerPolicy="no-referrer"
-                      onError={(e) => { e.currentTarget.style.display = 'none' }} />
-                  ) : null}
-                  <span className="thumb-fallback">{p.name.slice(0, 1)}</span>
-                  {state.source === 'drive' && <span className="type-pill">{typeLabel(p.mimeType)}</span>}
+      </div>
+      <div className="project-grid">
+        {state.loading
+          ? [0, 1, 2].map((i) => <div key={i} className="project-card skeleton" />)
+          : shown.map((p) => (
+            <a key={p.id} href={p.link} target="_blank" rel="noreferrer" className="project-card reveal">
+              <div className="project-thumb">
+                {!p.isFolder && (
+                  <img src={p.thumbnail} alt={p.name} loading="lazy" referrerPolicy="no-referrer"
+                    onError={(e) => { e.currentTarget.style.display = 'none' }} />
+                )}
+                <span className="thumb-fallback">{p.name.slice(0, 1)}</span>
+                <span className="type-pill">{typeLabel(p.mimeType)}</span>
+              </div>
+              <div className="project-info">
+                <div>
+                  <h3>{p.name}</h3>
+                  {p.description && <p>{p.description}</p>}
                 </div>
-                <div className="project-info">
-                  <div>
-                    <h3>{p.name}</h3>
-                    {p.description && <p>{p.description}</p>}
-                  </div>
-                  <span className="round-ico"><Arrow size={14} /></span>
-                </div>
-              </a>
-            ))}
-          </div>
-        )}
+                <span className="round-ico"><Arrow size={14} /></span>
+              </div>
+            </a>
+          ))}
+      </div>
+    </div>
+  )
+}
 
-        {state.source === 'fallback' && !state.loading && (
-          <p className="note">
-            Showing sample projects. Set <code>GOOGLE_API_KEY</code> and <code>GOOGLE_DRIVE_FOLDER_ID</code> to load projects from Google Drive.
-          </p>
-        )}
+export default function Projects() {
+  return (
+    <section id="projects" className="section">
+      <div className="container">
+        <SectionHead eyebrow="My Portfolio" accent="Selected" rest="Work" aside="Campaigns, promo videos, AI-assisted designs and personal content: what I made, how and why." />
+        <div className="cases">
+          {site.featuredProjects.map((p, i) => <CaseStudy key={p.title} p={p} index={i} />)}
+        </div>
+        <DriveGallery />
       </div>
     </section>
   )

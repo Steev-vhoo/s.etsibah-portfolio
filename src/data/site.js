@@ -1,93 +1,144 @@
 // ─────────────────────────────────────────────────────────────
-//  Edit this file to change every piece of text on the site.
-//  Replace public/profile.svg with your own photo (e.g. profile.png)
-//  and update `photo` below. A transparent-background PNG looks best.
+//  Edit this file to change the text on the site.
+//  Images live in public/images/.
+//  Leave a social `url` empty ('') to hide that icon.
 // ─────────────────────────────────────────────────────────────
 
 export const site = {
-  name: 'Your Name',
-  firstName: 'Your',
-  logoLetter: 'Y',
-  role: 'Product Designer',
+  name: 'Stephen Etsibah',
+  fullName: 'Stephen Amoa-Mensa Etsibah',
+  firstName: 'Stephen',
+  logoLetter: 'S',
+  role: 'Digital Marketer · Content Creator · Creative Thinker',
   location: 'based in Ghana',
-  photo: '/profile.svg',
-  email: 'hello@example.com',
-  phone: '+233 00 000 0000',
-  resumeUrl: '#', // link to a CV (e.g. a Google Drive PDF)
+  photo: '/images/stephen.webp',
+  photoAlt: '/images/stephen-bw.webp',
+  email: '', // TODO: add your email address — the contact form sends to it
+  phone: '+233 55 853 8142',
+  resumeUrl: '', // optional: link to a CV (e.g. a Google Drive PDF). Leave empty to hide the button.
 
-  heroQuote: 'Their remarkable design work transformed our product — highly recommended!',
-  reviews: { count: '150+', rating: '4.9' },
-  heroTags: ['Prototype', 'Dashboard', 'Mobile App Design', 'Design System', 'Website Design'],
+  heroQuote: "Creativity meets strategy. That's where the interesting things happen.",
+  heroBadge: { title: 'Digital Marketing', subtitle: 'MEST Ghana · Ongoing' },
+  heroTags: ['Content Creation', 'Social Media', 'Brand Strategy', 'Video Editing', 'Photography'],
 
   socials: [
-    { name: 'Facebook', url: 'https://facebook.com', icon: 'facebook' },
-    { name: 'X', url: 'https://x.com', icon: 'x' },
-    { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'linkedin' },
-    { name: 'Instagram', url: 'https://instagram.com', icon: 'instagram' },
-    { name: 'YouTube', url: 'https://youtube.com', icon: 'youtube' },
+    { name: 'LinkedIn', url: '', icon: 'linkedin' },   // TODO
+    { name: 'Instagram', url: '', icon: 'instagram' }, // TODO
+    { name: 'TikTok', url: '', icon: 'tiktok' },       // TODO
+    { name: 'YouTube', url: '', icon: 'youtube' },     // TODO
   ],
 
-  marquee: ['Website Design', 'Dashboard', 'Wireframe', 'User Research', 'Mobile Apps', 'Branding'],
+  marquee: ['Content Creation', 'Social Media', 'Brand Storytelling', 'Video Editing', 'Photography', 'Campaign Ideation', 'AI Content'],
 
-  servicesIntro:
-    'From the first sketch to a polished product, I help teams turn ideas into simple, beautiful and useful digital experiences.',
+  servicesIntro: 'A growing mix of creative execution, audience thinking and marketing fundamentals.',
   services: [
     {
-      title: 'UI/UX Design',
-      tags: ['User Research', 'User Flows', 'Usability Testing'],
-      text: 'Research-driven interfaces that feel natural, look great and solve real user problems.',
+      title: 'Content & Social',
+      tags: ['Content creation', 'Content planning', 'Social media copywriting', 'Social media management'],
+      text: 'Planning, writing and producing social content that gets noticed and helps brands connect with their audience.',
     },
     {
-      title: 'Application Design',
-      tags: ['Cross-Platform App Design', 'Progressive Web App', 'Wireframing and Prototyping', 'Custom App Theme Design'],
-      text: 'End-to-end design for mobile and web applications, from wireframes to interactive prototypes.',
+      title: 'Brand & Strategy',
+      tags: ['Brand communication', 'Audience research', 'Campaign ideation', 'Content strategy'],
+      text: 'Good marketing starts with understanding people: what they notice, what they value and what makes them connect.',
     },
     {
-      title: 'Website Design',
-      tags: ['Landing Pages', 'Portfolio Sites', 'Responsive Layouts'],
-      text: 'Responsive, conversion-focused websites that tell your story and grow your audience.',
+      title: 'Creative Production',
+      tags: ['Canva design', 'Promotional graphics', 'Short-form video editing', 'Visual storytelling'],
+      text: 'Promotional graphics and short-form videos, from shooting and creative direction through to the final edit.',
     },
     {
-      title: 'UI Design',
-      tags: ['Visual Design', 'Iconography', 'Micro-interactions'],
-      text: 'Pixel-perfect visual design with a consistent style, rhythm and attention to detail.',
+      title: 'Marketing Analytics',
+      tags: ['Social media insights', 'Performance metrics', 'Data-informed decisions', 'CPC / CTR / ROAS foundations'],
+      text: 'Reading the numbers behind content and campaigns to learn what works and decide what to do next.',
     },
     {
-      title: 'Design System',
-      tags: ['Component Libraries', 'Design Tokens', 'Documentation'],
-      text: 'Scalable design systems that keep teams fast and products consistent.',
+      title: 'AI-Assisted Content',
+      tags: ['AI image generation', 'AI video production', 'Prompt engineering'],
+      text: 'Using AI tools to explore creative concepts, develop visual ideas and produce marketing materials faster.',
     },
   ],
 
   about: {
-    text:
-      'I am a product designer who loves turning complex problems into clear, friendly experiences. I work closely with founders, developers and teams to research, design and ship products people enjoy using. Outside of client work I share what I learn through videos and articles.',
-    stats: [
-      { value: '450+', label: 'Happy Clients' },
-      { value: '25+', label: 'Years Experience' },
-      { value: '800+', label: 'Projects Done' },
+    paragraphs: [
+      "I'm Stephen, a creative enthusiast and digital marketer interested in the intersection of content, communication and strategy.",
+      'I enjoy exploring ideas, creating digital content, developing brand identities and discovering how brands can connect meaningfully with their audiences.',
+      "I'm particularly drawn to social media, content creation, brand storytelling, and the little details that make a brand memorable. I'm learning, experimenting, and building my way into the digital marketing space.",
     ],
-    skills: ['Figma', 'Adobe XD', 'Framer', 'Webflow', 'Illustrator', 'Photoshop', 'HTML/CSS', 'Prototyping'],
+    mindset: [
+      { value: 'Curious', label: 'by nature' },
+      { value: 'Creative', label: 'by instinct' },
+      { value: 'Strategic', label: 'by intention' },
+    ],
+    tools: ['Canva', 'CapCut', 'VN Editor', 'ChatGPT', 'Gemini', 'Microsoft Office'],
   },
 
-  experience: [
-    { period: '2023 — Present', role: 'Lead Product Designer', company: 'Company Name', text: 'Leading design for web and mobile products.' },
-    { period: '2020 — 2023', role: 'UI/UX Designer', company: 'Agency Name', text: 'Designed apps and websites for clients across industries.' },
-    { period: '2018 — 2020', role: 'Junior Designer', company: 'Studio Name', text: 'Visual design, branding and landing pages.' },
+  journey: [
+    { tag: 'Learning · Ongoing', title: 'Digital Marketing', org: 'MEST Ghana', text: 'Ongoing digital marketing training covering content, campaigns, email marketing and analytics.' },
+    { tag: 'Experience', title: 'Assistant Programs Officer', org: 'National Youth Authority', text: 'Project coordination, programme support and collaboration.' },
+    { tag: 'Courses', title: 'DataCamp', org: 'Online learning', text: 'Analysing Social Media Data in R · Data-Driven Decision Making for Business · Understanding Artificial Intelligence · Understanding Prompt Engineering.' },
+    { tag: 'Certificate', title: 'Virtual Assistance Certificate', org: 'ALX', text: 'Virtual assistance skills and remote work practice.' },
   ],
 
-  // Shown only if the Google Drive integration is not configured yet.
-  fallbackProjects: [
-    { name: 'Finance Dashboard', description: 'Analytics dashboard for a fintech startup.', thumbnail: '', link: '#' },
-    { name: 'Food Delivery App', description: 'Cross-platform mobile app design.', thumbnail: '', link: '#' },
-    { name: 'Agency Website', description: 'Responsive marketing website.', thumbnail: '', link: '#' },
+  // Case studies from the portfolio deck. These always show.
+  featuredProjects: [
+    {
+      title: 'Hair Business Promo Video',
+      category: 'Freelance Project',
+      image: '/images/projects/freelance-hair-promo.jpg',
+      overview: "Created a promotional video for a client's hair business, focused on presenting its products in an engaging and visually appealing way.",
+      role: 'Video shooting, creative direction and video editing',
+      outcome: "Promotional video content for the client's social media.",
+      tools: ['CapCut'],
+    },
+    {
+      title: 'AI-Powered Fintech Video Campaign',
+      category: 'Group Campaign',
+      image: '/images/projects/ai-fintech-campaign.jpg',
+      overview: 'As part of a group fintech marketing campaign, I generated an AI-powered promotional video from the campaign script we were given.',
+      role: 'Turned the script into an AI-generated video and helped with the visual execution of the campaign concept.',
+      outcome: 'AI-assisted content creation, video production and campaign execution.',
+      tools: ['CapCut AI'],
+    },
+    {
+      title: 'Email Marketing Campaign — Ramafrique GH',
+      category: 'Group Assignment',
+      image: '/images/projects/email-campaign-ramafrique.jpg',
+      overview: 'Worked with my group to develop the visual direction and structure of a marketing email for a handmade bag brand, using existing templates.',
+      role: 'Visual direction, email structure and copy',
+      outcome: 'Email marketing fundamentals, visual communication, creative collaboration and marketing design.',
+      tools: ['Email templates'],
+    },
+    {
+      title: 'AI-Generated Brand Content',
+      category: 'Creative Exploration',
+      image: '/images/projects/ai-generated-content.jpg',
+      overview: 'A selection of promotional and marketing designs made with AI-assisted creative tools: food, beverage and skincare product ads.',
+      role: 'Concept, prompting, layout and copy',
+      outcome: 'Uses AI to explore creative concepts, develop visual ideas and produce marketing materials for different purposes.',
+      tools: ['ChatGPT', 'Gemini', 'Canva'],
+    },
+    {
+      title: 'Personal Content',
+      category: 'Self-Initiated',
+      image: '/images/projects/personal-content.jpg',
+      overview: 'A collection of self-initiated video projects exploring storytelling, lifestyle content, creative expression and audience engagement.',
+      role: 'Content ideation, filming, editing and storytelling',
+      outcome: 'Developing engaging visual narratives and experimenting with different content formats and editing techniques.',
+      tools: ['CapCut', 'VN Editor'],
+    },
   ],
 
-  youtubeChannelUrl: 'https://youtube.com/@yourchannel',
-
-  testimonials: [
-    { name: 'Client Name', title: 'CEO, Company', text: 'Working together was a fantastic experience. The design exceeded our expectations and our users love it.' },
-    { name: 'Client Name', title: 'Founder, Startup', text: 'Fast, thoughtful and very professional. They understood our vision from day one.' },
-    { name: 'Client Name', title: 'Product Manager', text: 'Clear communication and beautiful work. Our conversion rate went up after the redesign.' },
+  photos: [
+    { src: '/images/photos/photo-1.jpg', alt: 'Sunset over a tree-lined road' },
+    { src: '/images/photos/photo-2.jpg', alt: 'Close-up of a cat with green eyes' },
+    { src: '/images/photos/photo-4.jpg', alt: 'Flowers silhouetted against a golden sky' },
+    { src: '/images/photos/photo-3.jpg', alt: 'Kitten in tall grass, selective colour' },
+    { src: '/images/photos/photo-5.jpg', alt: 'Dragonfly resting on a fingertip' },
   ],
+
+  youtubeChannelUrl: '', // TODO: e.g. https://youtube.com/@yourchannel
+
+  // Add real quotes from clients or collaborators here. The section stays hidden while this list is empty.
+  testimonials: [],
 }

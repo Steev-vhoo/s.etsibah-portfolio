@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import { site } from '../data/site.js'
 
 const links = [
-  ['Home', 'home'], ['Services', 'services'], ['About', 'about'], ['Projects', 'projects'],
-  ['Videos', 'videos'], ['Testimonials', 'testimonials'],
+  ['Home', 'home'], ['Services', 'services'], ['About', 'about'], ['Work', 'projects'],
+  ['Photography', 'photography'], ['Videos', 'videos'],
+  ...(site.testimonials.length ? [['Testimonials', 'testimonials']] : []),
 ]
 
 export default function Navbar() {

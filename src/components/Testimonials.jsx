@@ -2,6 +2,7 @@ import { site } from '../data/site.js'
 import SectionHead from './SectionHead.jsx'
 
 export default function Testimonials() {
+  if (!site.testimonials.length) return null
   return (
     <section id="testimonials" className="section bg-soft">
       <div className="container">
