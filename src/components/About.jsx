@@ -7,8 +7,9 @@ export default function About() {
     <section id="about" className="section bg-soft">
       <div className="container about">
         <div className="about-photo reveal">
-          <div className="about-circle" />
-          <img src={site.photoAlt || site.photo} alt={site.fullName} loading="lazy" />
+          <div className="about-circle">
+            <img src={site.photoAlt || site.photo} alt={site.fullName} loading="lazy" />
+          </div>
           <div className="float-card">
             <span className="float-ico">✦</span>
             <small>Ideas are everywhere.</small>

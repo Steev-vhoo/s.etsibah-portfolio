@@ -147,10 +147,13 @@ code { background: rgba(240, 78, 35, .1); color: var(--orange-dark); padding: 1p
 
 /* ── About ── */
 .about { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
-.about-photo { position: relative; display: flex; justify-content: center; align-items: flex-end; min-height: 460px; }
-.about-circle { position: absolute; bottom: 0; width: 82%; aspect-ratio: 1; border-radius: 50%; background: var(--orange);
+.about-photo { position: relative; display: flex; justify-content: center; align-items: center; }
+.about-circle { position: relative; width: min(460px, 100%); aspect-ratio: 1; border-radius: 50%; background: var(--orange);
   background-image: repeating-radial-gradient(circle at 70% 30%, transparent 0 18px, rgba(0, 0, 0, .09) 18px 21px); }
-.about-photo img { position: relative; max-height: 460px; object-fit: contain; }
+.about-circle { display: flex; justify-content: center; align-items: flex-end; overflow: hidden; }
+.about-circle img { height: 90%; width: auto; max-width: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); }
 .float-card { position: absolute; left: 0; top: 18%; background: #fff; border-radius: 16px; padding: 14px 22px; text-align: center; box-shadow: 0 12px 30px rgba(0, 0, 0, .1); display: flex; flex-direction: column; align-items: center; }
 .float-ico { width: 34px; height: 34px; border-radius: 50%; background: var(--orange); color: #fff; display: grid; place-items: center; font-size: 14px; margin-bottom: 4px; }
 .float-card small { font-size: 12px; color: var(--muted); }
@@ -383,5 +386,5 @@ code { background: rgba(240, 78, 35, .1); color: var(--orange-dark); padding: 1p
   .contact-form { padding: 22px; }
   .contact-form .row { grid-template-columns: 1fr; }
   .about-photo { min-height: 360px; }
-  .float-card { padding: 10px 16px; }
+  .float-card { padding: 10px 16px; top: auto; bottom: 2%; max-width: 170px; }
 }

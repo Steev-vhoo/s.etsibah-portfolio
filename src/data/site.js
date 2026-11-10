@@ -12,8 +12,8 @@ export const site = {
   role: 'Digital Marketer · Content Creator · Creative Thinker',
   location: 'based in Ghana',
   photo: '/images/stephen.webp',
-  photoAlt: '/images/stephen-bw.webp',
-  email: '', // TODO: add your email address — the contact form sends to it
+  photoAlt: '/images/stephen-about.webp',
+  email: 'estabenetsibah@gmail.com',
   phone: '+233 55 853 8142',
   resumeUrl: '', // optional: link to a CV (e.g. a Google Drive PDF). Leave empty to hide the button.
 
