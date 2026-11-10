@@ -7,7 +7,7 @@ Sections: Home, Services, About, Learning & Experience, Selected Work (case stud
 ## Edit the content
 - All text, links, stats, services, experience and testimonials: `src/data/site.js`
 - Images: `public/images/` (hero cut-out `stephen.webp`, about `stephen-bw.webp`, case-study covers in `projects/`, photography in `photos/`)
-- Still to fill in `site.js`: `email`, social `url`s, `youtubeChannelUrl`, and (optionally) `resumeUrl` and `testimonials`. Empty values are hidden on the page. With no email set, the contact form sends through WhatsApp.
+- Optional in `site.js`: `resumeUrl` and `testimonials`. Empty values are hidden on the page.
 - Colours and fonts: the `:root` variables at the top of `src/styles.css`
 
 ## Run locally
@@ -27,11 +27,12 @@ The `/api/*` functions also run under `npm run dev`.
 Each file becomes a project card. The card shows the file's thumbnail and links to the file in Drive. To give a card a description, add one in Drive under File information → Details → Description. Until Drive is set up, the sample projects in `site.js` are shown.
 
 ## YouTube videos
-Set `YOUTUBE_CHANNEL_ID` (the ID that starts with `UC…`, found under YouTube Studio → Settings → Channel → Advanced settings). If `GOOGLE_API_KEY` is set, the videos come from the YouTube Data API. If it isn't, the channel's public RSS feed is used, which needs no key. Also set `youtubeChannelUrl` in `site.js`.
+Nothing to set up: the videos come from the channel in `youtubeChannelUrl` in `site.js` (currently `@Justeclipsed`). The serverless function finds the channel ID from the @handle and reads the channel's public feed.
+Optional: set `YOUTUBE_CHANNEL_ID` (the `UC…` ID) to skip the lookup, and set `GOOGLE_API_KEY` to use the YouTube Data API instead of the feed.
 
 ## Deploy to Vercel
 1. Push this repo to GitHub.
 2. In Vercel, choose **Add New → Project** and import the repo. It detects Vite on its own.
-3. Under **Settings → Environment Variables**, add `GOOGLE_API_KEY`, `GOOGLE_DRIVE_FOLDER_ID` and `YOUTUBE_CHANNEL_ID`, then redeploy.
+3. For the Google Drive gallery, add `GOOGLE_API_KEY` and `GOOGLE_DRIVE_FOLDER_ID` under **Settings → Environment Variables**, then redeploy. YouTube works without any settings.
 
 The API keys are only used on the server, in the Vercel functions in `/api`, so they never reach the browser. Responses are cached for 10–15 minutes at the edge.

@@ -22,10 +22,10 @@ export const site = {
   heroTags: ['Content Creation', 'Social Media', 'Brand Strategy', 'Video Editing', 'Photography'],
 
   socials: [
-    { name: 'LinkedIn', url: '', icon: 'linkedin' },   // TODO
-    { name: 'Instagram', url: '', icon: 'instagram' }, // TODO
-    { name: 'TikTok', url: '', icon: 'tiktok' },       // TODO
-    { name: 'YouTube', url: '', icon: 'youtube' },     // TODO
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/stephenetsibah', icon: 'linkedin' },
+    { name: 'Instagram', url: 'https://www.instagram.com/_wofa.s', icon: 'instagram' },
+    { name: 'TikTok', url: 'https://www.tiktok.com/@stubborn_zero', icon: 'tiktok' },
+    { name: 'YouTube', url: 'https://www.youtube.com/@Justeclipsed', icon: 'youtube' },
   ],
 
   marquee: ['Content Creation', 'Social Media', 'Brand Storytelling', 'Video Editing', 'Photography', 'Campaign Ideation', 'AI Content'],
@@ -137,7 +137,7 @@ export const site = {
     { src: '/images/photos/photo-5.jpg', alt: 'Dragonfly resting on a fingertip' },
   ],
 
-  youtubeChannelUrl: '', // TODO: e.g. https://youtube.com/@yourchannel
+  youtubeChannelUrl: 'https://www.youtube.com/@Justeclipsed',
 
   // Add real quotes from clients or collaborators here. The section stays hidden while this list is empty.
   testimonials: [],
